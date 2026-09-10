@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beausion.pk — beauty, fragrance, skincare and personal care products in Pakistan.">
+  <title>Beausion.pk — Beauty & Fashion Companion</title>
+   <!-- Beausion Favicon -->
+  <link rel="icon" type="image/png" href="/assets/beausion-favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="topbar">BEAUTY • FRAGRANCE • SKINCARE • PERSONAL CARE — CURATED FOR YOU</div>
+  <header class="header">
+    <div class="nav-wrap container">
+      <a class="logo" href="/" aria-label="Beausion.pk home"><span class="logo-mark">B</span><span><b>Beausion</b><small>.pk</small></span></a>
+      <nav id="nav">
+        <a href="/#home"><i class="fa-solid fa-house"></i> Home</a><a href="#categories"><i class="fa-solid fa-layer-group"></i> Categories</a><a href="#featured"><i class="fa-solid fa-bag-shopping"></i> Products</a><a href="#about"><i class="fa-solid fa-circle-info"></i> About</a><a href="#contact"><i class="fa-solid fa-phone"></i> Contact</a>
+      </nav>
+      <div class="header-actions"><a class="wa-head" href="#contact"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a><button class="cart-btn" onclick="openCart()"><i class="fa-solid fa-bag-shopping"></i> Bag <b id="cartCount">0</b></button><button class="menu-btn" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div id="heroSlides" class="hero-slides"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-dots" id="heroDots"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">WELCOME TO BEAUSION.PK</p>
+        <h1>Your beauty,<br><em>your aura.</em></h1>
+        <p class="hero-copy">Discover a thoughtfully curated collection of beauty, fragrance, skincare and personal-care essentials — all in one elegant place.</p>
+        <div class="hero-actions"><a class="btn primary" href="#categories">Explore Categories</a><a class="btn ghost" href="#featured">Shop Products</a></div>
+        <div class="trust"><span>✓ Cash on Delivery</span><span>✓ Nationwide Delivery</span><span>✓ Easy WhatsApp Support</span></div>
+      </div>
+    </section>
+
+    <section class="collection featured-first" id="featured">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">LATEST FROM THE ADMIN PANEL</p><h2>Featured products</h2></div><a class="text-link" href="#categories">Browse collections <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div id="featuredProducts" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="categories container" id="categories">
+      <div class="section-head"><div><p class="eyebrow">SHOP BY CATEGORY</p><h2>Explore the collections</h2></div><p>Choose a collection to discover its beauty essentials.</p></div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section class="about container" id="about">
+      <div class="about-card"><p class="eyebrow">THE BEAUSION PROMISE</p><h2>Beauty that feels <em>beautiful.</em></h2><p>Beausion.pk is designed as a simple, premium storefront where your team can keep adding products from the admin page while customers browse them by collection.</p><div class="stats"><div><b>4</b><small>Curated categories</small></div><div><b>24/7</b><small>Online catalogue</small></div><div><b>PK</b><small>Nationwide shopping</small></div></div></div>
+      <div class="about-visual"><img src="/assets/categories/skincare.jpg" alt="Beausion skincare collection"></div>
+    </section>
+
+    <section class="contact" id="contact"><div class="container contact-inner"><div><p class="eyebrow">READY TO SHOP?</p><h2>Let's find your next beauty favourite.</h2><p>For availability, product questions or order help, contact Beausion.pk on WhatsApp.</p></div><a class="btn primary big" id="contactWhatsApp" href="#">Message on WhatsApp →</a></div></section>
+  </main>
+
+  <footer><div class="container footer-inner"><div class="logo footer-logo"><span class="logo-mark">B</span><span><b>Beausion</b><small>.pk</small></span></div><p>© 2026 Beausion.pk — Your Beauty & Fashion Companion.</p><div><a href="/#home">Home</a><a href="#categories">Categories</a><a href="#contact">Contact</a><a href="/admin.html">Admin</a></div></div></footer>
+
+  <div id="cartModal" class="modal" onclick="backdropClose(event,'cartModal')"><div class="modal-card"><button class="close" onclick="closeCart()">×</button><p class="eyebrow">YOUR BAG</p><h2>Your Cart</h2><div id="cartItems"></div><div class="total">Total: <strong id="cartTotal">Rs. 0</strong></div><button class="btn primary full" onclick="showCheckout()">Checkout</button></div></div>
+  <div id="checkoutModal" class="modal" onclick="backdropClose(event,'checkoutModal')"><div class="modal-card"><button class="close" onclick="closeCheckout()">×</button><p class="eyebrow">SECURE CHECKOUT</p><h2>Delivery details</h2><form id="checkoutForm"><input name="name" placeholder="Full name" required><input name="phone" placeholder="Phone number" required><input name="city" placeholder="City" required><textarea name="address" placeholder="Complete delivery address" required></textarea><select name="paymentMethod"><option value="COD">Cash on Delivery</option></select><button class="btn primary full">Place Order</button></form><p id="checkoutMessage"></p></div></div>
+  <div class="toast" id="toast">Added to your bag.</div>
+  <script src="/js/app.js"></script>
+</body>
+</html>
