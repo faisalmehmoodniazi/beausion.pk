@@ -326,6 +326,10 @@ mongoose.connect(MONGO_URI)
 .then(async () => {
   await ensureDefaultCategories();
   console.log("Connected to MongoDB successfully!");
-  app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+  if (process.env.NODE_ENV !== "production") {
+    app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+  }
 })
 .catch((err) => console.error("MongoDB Connection Error:", err.message));
+
+module.exports = app;
